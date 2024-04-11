@@ -1,0 +1,62 @@
+{
+  "nodes": {
+    "homebrew-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-+BmM6cvmiEHVKYeLMqed3ykz8NswLCLlynHpsyCNdEs=",
+        "path": "./homebrew-manager",
+        "type": "path"
+      },
+      "original": {
+        "path": "./homebrew-manager",
+        "type": "path"
+      }
+    },
+    "mac-util-apps": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-e1tHVAV9/mxXEJaAmZd1BTl6wbNwrU8FPChV5hJb6No=",
+        "path": "./mac-util-apps",
+        "type": "path"
+      },
+      "original": {
+        "path": "./mac-util-apps",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1712794296,
+        "narHash": "sha256-TiBGXiFZ24x30LYvV+SbqfdkeQxeJK9Fxtx7dDmlJEI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "34d3520673acbc81d5cb4fa1c878dd8ed275502b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "homebrew-manager": "homebrew-manager",
+        "mac-util-apps": "mac-util-apps",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
