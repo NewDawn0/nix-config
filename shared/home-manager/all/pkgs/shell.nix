@@ -5,17 +5,19 @@
 
   config = lib.mkIf config.pkgs-shellCfg.enable {
     home.packages = with pkgs; [
-      ripgrep
-      ffmpeg
+      cpufetch
+      cpufetch
+      curl
       fd
+      ffmpeg
       figlet
       file
-      curl
-      cpufetch
       gnused
       jq
       killall
+      neofetch
       onefetch
+      ripgrep
       wget
     ];
   };
