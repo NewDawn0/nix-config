@@ -34,6 +34,7 @@
         "balenaetcher"
         "blockbench"
         "chatgpt"
+        "firefox"
         "github"
         "languagetool"
         "obs"
