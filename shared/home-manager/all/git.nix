@@ -10,6 +10,7 @@
       userName = "NewDawn0";
       userEmail = "newdawn.v0.0@gmail.com";
       aliases = {
+        am = "commit --amend";
         br = "branch";
         ch = "checkout";
         cm = "commit -m";
