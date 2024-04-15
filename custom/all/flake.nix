@@ -34,7 +34,7 @@
       inputs.rust-overlay.follows = "rust-overlay";
     };
     note = {
-      url = "path:./note";
+      url = "https://github.com/NewDawn0/note.git";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-systems.follows = "nix-systems";
     };
