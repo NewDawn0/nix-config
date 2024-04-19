@@ -281,11 +281,11 @@
         "up": "up"
       },
       "locked": {
-        "lastModified": 1713491111,
-        "narHash": "sha256-cXFQeUNn6CERypd5htI/v51Fuv9UsrCmYblLz26B2cA=",
+        "lastModified": 1713492196,
+        "narHash": "sha256-Ni1VJIo5sCxXJOIj0XvUV4/kkOwbPsVyCiMiu9PM8uw=",
         "owner": "NewDawn0",
         "repo": "shell-utils",
-        "rev": "65de48fb8cfa9cc1ee738f1876436a153adbf1f9",
+        "rev": "08eeba406ffa1a0cbec73f97a6d646774a631c1a",
         "type": "github"
       },
       "original": {
