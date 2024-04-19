@@ -4,6 +4,10 @@
   };
 
   config = lib.mkIf config.systemCfg.enable {
+    documentation = {
+      info.enable = false;
+      doc.enable = false;
+    };
     security.pam.enableSudoTouchIdAuth = true;
     system = {
       configurationRevision = self.rev or self.dirtyRev or null;
