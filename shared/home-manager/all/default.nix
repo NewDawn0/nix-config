@@ -19,6 +19,7 @@
     ./mpv.nix
     ./nushell.nix
     ./pandoc.nix
+    ./pass.nix
     ./pkgs
     ./ssh.nix
     ./starship.nix
@@ -30,7 +31,6 @@
     ./zathura.nix
     ./zsh.nix
   ];
-
   alacrittyCfg.enable = lib.mkDefault true;
   aliasesCfg.enable = lib.mkDefault true;
   bashCfg.enable = lib.mkDefault true;
@@ -51,6 +51,7 @@
   mpvCfg.enable = lib.mkDefault true;
   nushellCfg.enable = lib.mkDefault true;
   pandocCfg.enable = lib.mkDefault true;
+  password-storeCfg.enable = lib.mkDefault true;
   pkgsCfg.enable = lib.mkDefault true;
   sshCfg.enable = lib.mkDefault true;
   starshipCfg.enable = lib.mkDefault true;
