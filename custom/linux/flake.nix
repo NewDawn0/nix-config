@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Custom linux packages";
 
   inputs = { nixpkgs.url = "github:nixos/nixpkgs"; };
 

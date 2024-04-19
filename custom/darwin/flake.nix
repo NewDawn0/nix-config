@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Custom darwin packages";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mac-util-apps = {
-      url = "path:./mac-util-apps";
+      url = "github:NewDawn0/mac-apps-archive";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

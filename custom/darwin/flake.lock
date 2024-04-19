@@ -8,7 +8,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-+BmM6cvmiEHVKYeLMqed3ykz8NswLCLlynHpsyCNdEs=",
+        "narHash": "sha256-5+vp1StxvITUw6ueGkBn+aveKxDKHBx1sq8Wl827F6Y=",
         "path": "./homebrew-manager",
         "type": "path"
       },
@@ -24,23 +24,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-e1tHVAV9/mxXEJaAmZd1BTl6wbNwrU8FPChV5hJb6No=",
-        "path": "./mac-util-apps",
-        "type": "path"
+        "lastModified": 1713486325,
+        "narHash": "sha256-1swPPp2vZupnF2rXgmtoKWbd+/5BJteJCM48abOTtMI=",
+        "owner": "NewDawn0",
+        "repo": "mac-apps-archive",
+        "rev": "553c103c85cab82f7d3dc5b6ee36f12b5ee56d8c",
+        "type": "github"
       },
       "original": {
-        "path": "./mac-util-apps",
-        "type": "path"
+        "owner": "NewDawn0",
+        "repo": "mac-apps-archive",
+        "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1712794296,
-        "narHash": "sha256-TiBGXiFZ24x30LYvV+SbqfdkeQxeJK9Fxtx7dDmlJEI=",
+        "lastModified": 1713489661,
+        "narHash": "sha256-tmM0ye1L3lOZiwdZgndlHE8UE9F4E8RhNnT8DZa0P2w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "34d3520673acbc81d5cb4fa1c878dd8ed275502b",
+        "rev": "3d06f73179401bcce967c5a5b54cc7005cb26348",
         "type": "github"
       },
       "original": {
