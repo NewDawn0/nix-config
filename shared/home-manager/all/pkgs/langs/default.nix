@@ -23,7 +23,6 @@
       # Docker
       colima
       docker
-      docker-gc
       # Haskell
       cabal-install
       ghc
