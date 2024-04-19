@@ -2,7 +2,7 @@
   inputs.rust-overlay.overlays.default
   (final: prev: {
     ansi = inputs.custom-all.packages.${prev.system}.ansi;
-    ds = inputs.custom-all.packages.${prev.system}.ds;
+    dirStack = inputs.custom-all.packages.${prev.system}.dirStack;
     ex = inputs.custom-all.packages.${prev.system}.ex;
     gen = inputs.custom-all.packages.${prev.system}.gen;
     note = inputs.custom-all.packages.${prev.system}.note;
