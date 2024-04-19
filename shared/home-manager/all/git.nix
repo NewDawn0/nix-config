@@ -8,7 +8,7 @@
     programs.git = lib.mkIf config.gitCfg.enable {
       enable = true;
       userName = "NewDawn0";
-      userEmail = "newdawn.v0.0@gmail.com";
+      userEmail = "newdawn.v0.0+git@gmail.com";
       aliases = {
         am = "commit --amend";
         br = "branch";
