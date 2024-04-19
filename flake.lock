@@ -76,7 +76,9 @@
       "inputs": {
         "homebrew-manager": "homebrew-manager",
         "mac-util-apps": "mac-util-apps",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1,
@@ -91,7 +93,9 @@
     },
     "custom-linux": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1,
@@ -286,11 +290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713492181,
-        "narHash": "sha256-lMcHk5sy4SBrAiDIPTVaR7kThPTbRdGfLa6Knzr+/VQ=",
+        "lastModified": 1713492497,
+        "narHash": "sha256-FifiHvYmHL7BEOaQorHjHRaW3SJj2qYCdxUmCETAQl4=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "99b3f9a1f5d2604d542f367d38001dfa40eea7b9",
+        "rev": "eb25dc61a62efcdf47efce6cb17cd5cb3c8f2719",
         "type": "github"
       },
       "original": {
@@ -376,36 +380,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1713489661,
-        "narHash": "sha256-tmM0ye1L3lOZiwdZgndlHE8UE9F4E8RhNnT8DZa0P2w=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "3d06f73179401bcce967c5a5b54cc7005cb26348",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1713489661,
-        "narHash": "sha256-tmM0ye1L3lOZiwdZgndlHE8UE9F4E8RhNnT8DZa0P2w=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "3d06f73179401bcce967c5a5b54cc7005cb26348",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
         "lastModified": 1706487304,
         "narHash": "sha256-LE8lVX28MV2jWJsidW13D2qrHU/RUUONendL2Q/WlJg=",
         "owner": "NixOS",
@@ -483,7 +457,7 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nix-systems": "nix-systems",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "rust-overlay": "rust-overlay",
         "tt-schemes": "tt-schemes"
@@ -492,14 +466,14 @@
     "rust-overlay": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1713406362,
-        "narHash": "sha256-85f70DM03RWqzahxXChSWcbnUYAKYBDBvyQ4P+kXVBk=",
+        "lastModified": 1713492869,
+        "narHash": "sha256-Zv+ZQq3X+EH6oogkXaJ8dGN8t1v26kPZgC5bki04GnM=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "05a4f1b28ee59f589c8a0ad877741de3c3bf894d",
+        "rev": "1e9264d1214d3db00c795b41f75d55b5e153758e",
         "type": "github"
       },
       "original": {
