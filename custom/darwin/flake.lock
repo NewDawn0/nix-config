@@ -8,7 +8,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-5+vp1StxvITUw6ueGkBn+aveKxDKHBx1sq8Wl827F6Y=",
+        "narHash": "sha256-38oKhzy/vHN8xlvErIV+e81fo5bXsbvdDZOYdNtq5jo=",
         "path": "./homebrew-manager",
         "type": "path"
       },
@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713486325,
-        "narHash": "sha256-1swPPp2vZupnF2rXgmtoKWbd+/5BJteJCM48abOTtMI=",
+        "lastModified": 1713494577,
+        "narHash": "sha256-d2BlpZxzODHyMbEbzBfFWqSoTLZdQMgL/wmupLbnTG4=",
         "owner": "NewDawn0",
         "repo": "mac-apps-archive",
-        "rev": "553c103c85cab82f7d3dc5b6ee36f12b5ee56d8c",
+        "rev": "b8f3539c4a0001a52cdcfec2cec71d65603841f1",
         "type": "github"
       },
       "original": {
