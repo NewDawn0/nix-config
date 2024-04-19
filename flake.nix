@@ -19,8 +19,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    custom-linux = { url = "path:./custom/linux"; };
-    custom-darwin = { url = "path:./custom/darwin"; };
+    custom-linux = {
+      url = "path:./custom/linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    custom-darwin = {
+      url = "path:./custom/darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     custom-all = {
       url = "path:./custom/all";
       inputs.nixpkgs.follows = "nixpkgs";
