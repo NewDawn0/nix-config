@@ -39,7 +39,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-systems.follows = "nix-systems";
     };
-    tl = {
+    translate = {
       url = "github:NewDawn0/tl";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-systems.follows = "nix-systems";

@@ -246,7 +246,7 @@
         "rgpt": "rgpt",
         "rust-overlay": "rust-overlay",
         "shell-utils": "shell-utils",
-        "tl": "tl"
+        "translate": "translate"
       }
     },
     "rust-overlay": {
@@ -309,7 +309,7 @@
         "type": "github"
       }
     },
-    "tl": {
+    "translate": {
       "inputs": {
         "nix-systems": [
           "nix-systems"

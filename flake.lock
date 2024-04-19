@@ -59,11 +59,11 @@
           "rust-overlay"
         ],
         "shell-utils": "shell-utils",
-        "tl": "tl"
+        "translate": "translate"
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-ltkv9SaSLm/sG0G28OjiiV8pBQuSE/gABFu5xBTDUZA=",
+        "narHash": "sha256-0pWuHmWRxDEV0npXoP356oMObnPEoZqBWt+pnqs3UB0=",
         "path": "./custom/all",
         "type": "path"
       },
@@ -551,7 +551,7 @@
         "type": "github"
       }
     },
-    "tl": {
+    "translate": {
       "inputs": {
         "nix-systems": [
           "custom-all",
