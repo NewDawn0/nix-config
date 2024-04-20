@@ -45,7 +45,7 @@
       diff-so-fancy.enable = true;
       lfs.enable = true;
       signing = {
-        key = "0xEFA080F2A2D89EC7";
+        key = "0xF407CF2A283453F3";
         signByDefault = true;
       };
     };
