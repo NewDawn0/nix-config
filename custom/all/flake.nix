@@ -28,6 +28,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-systems.follows = "nix-systems";
     };
+    notify = {
+      url = "github:NewDawn0/notify";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nix-systems.follows = "nix-systems";
+    };
     rgpt = {
       url = "github:NewDawn0/rgpt";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,6 +62,7 @@
         gen = inputs.gen.packages.${system}.default;
         nixie-clock = inputs.nixie-clock.packages.${system}.default;
         note = inputs.note.packages.${system}.default;
+        notify = inputs.notify.packages.${system}.default;
         rgpt = inputs.rgpt.packages.${system}.default;
         translate = inputs.translate.packages.${system}.default;
         up = inputs.shell-utils.packages.${system}.up;

@@ -6,6 +6,7 @@
     ex = inputs.custom-all.packages.${prev.system}.ex;
     gen = inputs.custom-all.packages.${prev.system}.gen;
     note = inputs.custom-all.packages.${prev.system}.note;
+    notify = inputs.custom-all.packages.${prev.system}.notify;
     up = inputs.custom-all.packages.${prev.system}.up;
     rgpt = inputs.custom-all.packages.${prev.system}.rgpt;
     translate = inputs.custom-all.packages.${prev.system}.translate;

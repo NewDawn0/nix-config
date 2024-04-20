@@ -11,6 +11,7 @@
       gen
       nixie-clock
       note
+      notify
       translate
       up
     ];
