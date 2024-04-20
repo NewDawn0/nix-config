@@ -10,6 +10,7 @@
     ./feh.nix
     ./fzf.nix
     ./git.nix
+    ./gnupg.nix
     ./home.nix
     ./jq.nix
     ./lang.nix
@@ -41,6 +42,7 @@
   fzfCfg.enable = lib.mkDefault true;
   ghCfg.enable = lib.mkDefault true;
   gitCfg.enable = lib.mkDefault true;
+  gnupgCfg.enable = lib.mkDefault true;
   homeCfg.enable = lib.mkDefault true;
   jqCfg.enable = lib.mkDefault true;
   langCfg.enable = lib.mkDefault true;
