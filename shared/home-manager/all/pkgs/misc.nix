@@ -7,10 +7,11 @@
   config = lib.mkIf config.pkgs-miscCfg.enable {
     home.packages = with pkgs; [
       didyoumean
+      gnupg
       hunspell
       imagemagick
-      typos
       qemu
+      typos
       unstable.ani-cli
     ];
   };
