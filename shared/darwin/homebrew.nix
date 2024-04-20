@@ -7,13 +7,7 @@
     homebrew = {
       enable = true;
       global.autoUpdate = false;
-      taps = [
-        "homebrew/services"
-        {
-          name = "lencx/chatgp";
-          clone_target = "https://github.com/lencx/ChatGPT.git";
-        }
-      ];
+      taps = [ "homebrew/services" ];
       brews = [ { name = "ghcup"; } { name = "openssl@3"; } ];
       onActivation = {
         autoUpdate = true;
@@ -33,7 +27,6 @@
         "appcleaner"
         "balenaetcher"
         "blockbench"
-        "chatgpt"
         "firefox"
         "github"
         "languagetool"
