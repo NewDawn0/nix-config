@@ -10,10 +10,10 @@
       userName = "NewDawn0";
       userEmail = "newdawn.v0.0+git@gmail.com";
       aliases = {
-        am = "commit --amend";
         br = "branch";
         ch = "checkout";
         cm = "commit -m";
+        ca = "commit --amend";
         df = "diff";
         pl = "pull";
         pu = "push";
