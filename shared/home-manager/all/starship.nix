@@ -141,7 +141,7 @@
           inherit (lang) style format;
         };
         docker_context = {
-          format = "[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)";
+          format = "[[ $symbol( $context) ](fg:color_bg3 bg:color_purple)]($style)";
           style = "bg:color_bg3";
           symbol = "";
         };
