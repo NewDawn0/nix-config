@@ -4,7 +4,7 @@
   config = lib.mkIf config.aliasesCfg.enable {
     home.shellAliases = {
       nix-flake-update = ''
-        fd flake.nix | xargs -I {} dirname {} | xargs -I {} sh -c "cd {} && nix flake update"'';
+        fd flake.nix | xargs dirname | xargs -I {} sh -c "cd {} && nix flake update"'';
       diff = "diff --color -u";
     };
   };
