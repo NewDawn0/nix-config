@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713494577,
-        "narHash": "sha256-d2BlpZxzODHyMbEbzBfFWqSoTLZdQMgL/wmupLbnTG4=",
+        "lastModified": 1713996499,
+        "narHash": "sha256-+8U1+OogY6VE47J8ID8xc7IGWsV5nfc7Ftq+kfFPbks=",
         "owner": "NewDawn0",
         "repo": "mac-apps-archive",
-        "rev": "b8f3539c4a0001a52cdcfec2cec71d65603841f1",
+        "rev": "d215bd8e09b1928c30c70ad76ad52c2f0392e84b",
         "type": "github"
       },
       "original": {
