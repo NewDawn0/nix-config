@@ -1,7 +1,7 @@
 { pkgs, ... }:
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    nix-prefetch-url
+    nix-prefetch
     nix-prefetch-git
     nix-prefetch-github
     nix-prefetch-docker
