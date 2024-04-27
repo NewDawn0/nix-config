@@ -12,6 +12,7 @@
       typos
       qemu
       unstable.ani-cli
+      texliveSmall
     ];
   };
 }
