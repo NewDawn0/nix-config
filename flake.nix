@@ -46,6 +46,7 @@
         let inherit (utils.mkPkgs system) pkgs unstable;
         in {
           macEnv = pkgs.callPackage ./devShells/macEnv.nix { inherit pkgs; };
+          prefetchers = pkgs.callPackage ./devShells/prefetchers.nix { inherit pkgs; };
         });
       nixosConfigurations = { };
       darwinConfigurations = {
