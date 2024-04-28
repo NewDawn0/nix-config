@@ -9,10 +9,11 @@
       didyoumean
       hunspell
       imagemagick
-      typos
       qemu
-      unstable.ani-cli
       texliveSmall
+      timg
+      typos
+      unstable.ani-cli
     ];
   };
 }
