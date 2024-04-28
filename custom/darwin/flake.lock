@@ -8,7 +8,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-fH0im6vvU1WsUPAUdyYNPEbCowUjgZzg86ndv85x+hc=",
+        "narHash": "sha256-ZVDSk0E3tjxEhsAbw0J5U1rkVAKtMuGM5ytlWbE1ZII=",
         "path": "./homebrew-manager",
         "type": "path"
       },
@@ -39,11 +39,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1713995654,
-        "narHash": "sha256-S+4C0H9w7H9tSv1RviD/otsTmf1ECuxJMJ/j1t9gjPE=",
+        "lastModified": 1714280680,
+        "narHash": "sha256-eNTZCX/vK/BQOpY+6n5a6oGxBBe7qfSbtcppepCLAAQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ce6da85c2dc9e659bef799c2ed053771e1bb8ee3",
+        "rev": "9516f3c963708933abe984df94a925af38916237",
         "type": "github"
       },
       "original": {
