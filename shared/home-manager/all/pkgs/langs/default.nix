@@ -15,7 +15,9 @@
       go
       luajitPackages.luarocks
       nasm
+      nodePackages.diagnostic-languageserver
       python3
+      ruff-lsp
       # C/C++ dev
       gcc
       gnumake
