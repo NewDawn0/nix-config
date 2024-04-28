@@ -19,6 +19,7 @@
       python3
       ruff-lsp
       # C/C++ dev
+      cmake
       gcc
       gnumake
       libcxxStdenv
