@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  imports = [ ./custom.nix ./macLibs ./misc.nix ];
+  imports = [ ./custom.nix ./macLibs.nix ./misc.nix ];
 
   options = {
     darwin-pkgsCfg.enable = lib.mkEnableOption "enable darwin packages config";
