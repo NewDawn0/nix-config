@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
   options = {
-    darwin-pkgs-macLibsCfg.enable = lib.mkEnableOption "Enable "
+    darwin-pkgs-macLibsCfg.enable = lib.mkEnableOption "Enable darwin development libraries";
   };
   config = lib.mkIf config.darwin-pkgs-macLibsCfg.enable {
     home.packages = with pkgs;
