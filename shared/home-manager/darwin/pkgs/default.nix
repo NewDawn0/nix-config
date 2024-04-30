@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.darwin-pkgsCfg.enable {
     darwin-pkgs-customCfg.enable = lib.mkDefault true;
-    darwin-pkgs-macLibsCfg.enable = lib.mkdefault true;
+    darwin-pkgs-macLibsCfg.enable = lib.mkDefault true;
     darwin-pkgs-miscCfg.enable = lib.mkDefault true;
   };
 }
