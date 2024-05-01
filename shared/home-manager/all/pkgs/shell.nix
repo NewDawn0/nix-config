@@ -6,7 +6,6 @@
   config = lib.mkIf config.pkgs-shellCfg.enable {
     home.packages = with pkgs; [
       cpufetch
-      cpufetch
       curl
       fd
       ffmpeg
@@ -15,7 +14,7 @@
       gnused
       jq
       killall
-      neofetch
+      fastfetch
       nix-output-monitor
       nvd
       unstable.nh
