@@ -8,7 +8,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-ZVDSk0E3tjxEhsAbw0J5U1rkVAKtMuGM5ytlWbE1ZII=",
+        "narHash": "sha256-0kGqcscwBN79XShRwmWlqaBigEuuqglcnBOUNpgN85s=",
         "path": "./homebrew-manager",
         "type": "path"
       },
