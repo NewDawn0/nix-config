@@ -19,16 +19,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    custom-linux = {
-      url = "path:./custom/linux";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    custom-darwin = {
-      url = "path:./custom/darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    custom-all = {
-      url = "path:./custom/all";
+    nix-custom-pkgs = {
+      url = "github:NewDawn0/nix-custom-pkgs";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-systems.follows = "nix-systems";
       inputs.rust-overlay.follows = "rust-overlay";
@@ -46,7 +38,8 @@
         let inherit (utils.mkPkgs system) pkgs unstable;
         in {
           macEnv = pkgs.callPackage ./devShells/macEnv.nix { inherit pkgs; };
-          prefetchers = pkgs.callPackage ./devShells/prefetchers.nix { inherit pkgs; };
+          prefetchers =
+            pkgs.callPackage ./devShells/prefetchers.nix { inherit pkgs; };
         });
       nixosConfigurations = { };
       darwinConfigurations = {
