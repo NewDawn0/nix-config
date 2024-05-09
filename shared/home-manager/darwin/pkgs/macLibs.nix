@@ -1,10 +1,11 @@
 { config, lib, pkgs, ... }: {
   options = {
-    darwin-pkgs-macLibsCfg.enable = lib.mkEnableOption "Enable darwin development libraries";
+    darwin-pkgs-macLibsCfg.enable =
+      lib.mkEnableOption "Enable darwin development libraries";
   };
   config = lib.mkIf config.darwin-pkgs-macLibsCfg.enable {
     home.packages = with pkgs;
-      builtins.attrValues darwin.apple_sdk.frameworks ++ 
-      [ darwin.libobjc darwin.libiconv pkg-config ];
+      builtins.attrValues darwin.apple_sdk.frameworks
+      ++ [ darwin.libobjc darwin.libiconv pkg-config ];
   };
 }
