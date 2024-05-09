@@ -5,6 +5,6 @@
   };
 
   config = lib.mkIf config.darwin-pkgs-customCfg.enable {
-    home.packages = with pkgs; [ homebrew-manager mac-util-apps ];
+    home.packages = with pkgs; [ homebrew-manager mac-apps-archive ];
   };
 }
