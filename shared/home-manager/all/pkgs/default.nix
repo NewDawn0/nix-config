@@ -1,14 +1,10 @@
-{ config, lib, ... }: {
-  imports = [ ./langs ./ai.nix ./apps.nix ./misc.nix ./shell.nix ./custom.nix ];
-
+{ config, lib, ... }: with builtins; with lib; let
+  files = filter (f: f != "default.nix") (attrNames (readDir ./.));
+  mergeAttrs = attrs: foldl' (acc: next: acc // next) { } attrs;
+  cfgFilesSet = map (f: attrsets.setAttrByPath [ f "enable" ] (mkDefault true))
+    (map (f: "pkgs-${f}Cfg") (map (removeSuffix ".nix") files));
+in {
+  imports = map (f: ./${f}) files;
   options = { pkgsCfg.enable = lib.mkEnableOption "enable packages config"; };
-
-  config = lib.mkIf config.pkgsCfg.enable {
-    pkgs-langsCfg.enable = lib.mkDefault true;
-    pkgs-aiCfg.enable = lib.mkDefault true;
-    pkgs-miscCfg.enable = lib.mkDefault true;
-    pkgs-appsCfg.enable = lib.mkDefault true;
-    pkgs-shellCfg.enable = lib.mkDefault true;
-    pkgs-customCfg.enable = lib.mkDefault true;
-  };
+  config = lib.mkIf config.pkgsCfg.enable (mergeAttrs cfgFilesSet);
 }
