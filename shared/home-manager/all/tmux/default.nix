@@ -4,21 +4,30 @@ in {
   options = { tmuxCfg.enable = lib.mkEnableOption "enable tmux config"; };
 
   config = lib.mkIf config.tmuxCfg.enable {
+    home.packages = with pkgs; [ tmuxifier ];
     programs.tmux = {
       enable = true;
-      baseIndex = 0;
+      baseIndex = 1;
       clock24 = false;
       keyMode = "vi";
       mouse = true;
-      plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator themes.everblush ];
-      prefix = "C-s";
-      terminal = "screen-256color";
+      plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator themes.everblush yank ];
       extraConfig = ''
+        bind-key -T copy-mode-vi v send-keys -X begin-selection
+        bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+        bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+        bind-key -n v copy-mode
+
+        bind '"' split-window -v -c "#{pane_current_path}"
+        bind % split-window -h -c "#{pane_current_path}"
+        
         bind-key h select-pane -L
         bind-key j select-pane -D
         bind-key k select-pane -U
         bind-key l select-pane -R
+
         set-option -g status-position top
+        set-option -sa terminal-overrides ",xterm*:Tc"
       '';
     };
   };
