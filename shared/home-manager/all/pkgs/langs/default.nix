@@ -18,6 +18,7 @@
       nodePackages.diagnostic-languageserver
       python3
       ruff-lsp
+      unstable.gleam
       zig
       # C/C++ dev
       cmake
