@@ -5,6 +5,6 @@
   };
 
   config = lib.mkIf config.darwin-aliasesCfg.enable {
-    home.shellAliases = { neofetch = "fastfetch -c neofetch -l mac"; };
+    home.shellAliases.neofetch = "fastfetch -c neofetch -l mac";
   };
 }
