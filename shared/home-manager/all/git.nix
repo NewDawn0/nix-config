@@ -42,7 +42,12 @@
         push.autoSetupRemote = true;
         pull.rebase = false;
       };
-      diff-so-fancy.enable = true;
+      delta = {
+        enable = true;
+        options = {
+          side-by-side = true;
+        };
+      };
       lfs.enable = true;
       signing = {
         key = "0xF407CF2A283453F3";
