@@ -59,14 +59,14 @@
         };
         colors = with scheme.withHashtag; {
           normal = {
-            white = "${base06}";
-            red = "${base08}";
-            yellow = "${base13}";
-            green = "${base0B}";
-            cyan = "${base0C}";
-            blue = "${base0D}";
-            magenta = "${base0E}";
-            black = "${base11}";
+            white = base06;
+            red = base08;
+            yellow = base13;
+            green = base0B;
+            cyan = base0C;
+            blue = base0D;
+            magenta = base0E;
+            black = base11;
           };
           bright = {
             white = base07;
