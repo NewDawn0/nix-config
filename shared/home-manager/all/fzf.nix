@@ -1,5 +1,5 @@
 { config, lib, scheme, ... }: {
-  options = { fzfCfg.enable = lib.mkEnableOption "enable fzf config"; };
+  options = { fzfCfg.enable = lib.mkEnableOption "the fzf config"; };
 
   config = lib.mkIf config.fzfCfg.enable {
     programs.fzf = {

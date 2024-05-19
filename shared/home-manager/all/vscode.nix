@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options = { vscodeCfg.enable = lib.mkEnableOption "enable vscode config"; };
+  options = { vscodeCfg.enable = lib.mkEnableOption "the vscode config"; };
 
   config = lib.mkIf config.vscodeCfg.enable {
     programs.vscode = {

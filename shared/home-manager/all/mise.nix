@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { miseCfg.enable = lib.mkEnableOption "enable mise config"; };
+  options = { miseCfg.enable = lib.mkEnableOption "the mise config"; };
 
   config = lib.mkIf config.miseCfg.enable {
     programs.mise = {

@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { fehCfg.enable = lib.mkEnableOption "enable feh config"; };
+  options = { fehCfg.enable = lib.mkEnableOption "the feh config"; };
 
   config = lib.mkIf config.fehCfg.enable {
     programs.feh = {

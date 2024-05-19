@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { bashCfg.enable = lib.mkEnableOption "enable bash config"; };
+  options = { bashCfg.enable = lib.mkEnableOption "the bash config"; };
 
   config = lib.mkIf config.bashCfg.enable {
     programs.bash = {

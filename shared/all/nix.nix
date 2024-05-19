@@ -2,7 +2,7 @@
 let overlays = import ../flake/overlays.nix { inherit inputs; };
 in {
   options = {
-    nixCfg.enable = lib.mkEnableOption "enable nix package manager config";
+    nixCfg.enable = lib.mkEnableOption "the nix package manager config";
   };
 
   config = lib.mkIf config.nixCfg.enable {

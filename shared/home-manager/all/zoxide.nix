@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { zoxideCfg.enable = lib.mkEnableOption "enable zoxide config"; };
+  options = { zoxideCfg.enable = lib.mkEnableOption "the zoxide config"; };
 
   config = lib.mkIf config.zoxideCfg.enable {
     programs.zoxide = {

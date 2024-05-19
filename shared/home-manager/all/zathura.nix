@@ -1,5 +1,5 @@
 { config, lib, scheme, ... }: {
-  options = { zathuraCfg.enable = lib.mkEnableOption "enable zathura config"; };
+  options = { zathuraCfg.enable = lib.mkEnableOption "the zathura config"; };
 
   config = lib.mkIf config.zathuraCfg.enable {
     programs.zathura = {

@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { thefuckCfg.enable = lib.mkEnableOption "enable thefuck config"; };
+  options = { thefuckCfg.enable = lib.mkEnableOption "the thefuck config"; };
 
   config = lib.mkIf config.thefuckCfg.enable {
     programs.thefuck = {

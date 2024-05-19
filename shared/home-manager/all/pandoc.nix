@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { pandocCfg.enable = lib.mkEnableOption "enable pandoc config"; };
+  options = { pandocCfg.enable = lib.mkEnableOption "the pandoc config"; };
 
   config = lib.mkIf config.pandocCfg.enable {
     programs.pandoc = {

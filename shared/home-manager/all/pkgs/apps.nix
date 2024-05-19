@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
   options = {
-    pkgs-appsCfg.enable = lib.mkEnableOption "enable apps packages config";
+    pkgs-appsCfg.enable = lib.mkEnableOption "the apps packages config";
   };
 
   config = lib.mkIf config.pkgs-appsCfg.enable {

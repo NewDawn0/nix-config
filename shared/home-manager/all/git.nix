@@ -1,7 +1,7 @@
 { config, lib, ... }: {
   options = {
-    ghCfg.enable = lib.mkEnableOption "enable gh config";
-    gitCfg.enable = lib.mkEnableOption "enable git config";
+    ghCfg.enable = lib.mkEnableOption "the gh config";
+    gitCfg.enable = lib.mkEnableOption "the git config";
   };
 
   config = {

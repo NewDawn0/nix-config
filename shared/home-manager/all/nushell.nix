@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { nushellCfg.enable = lib.mkEnableOption "enable nushell config"; };
+  options = { nushellCfg.enable = lib.mkEnableOption "the nushell config"; };
 
   config = lib.mkIf config.nushellCfg.enable {
     programs.nushell = {

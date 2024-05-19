@@ -1,6 +1,6 @@
 { config, lib, pkgs, unstable, ... }: {
   options = {
-    pkgs-shellCfg.enable = lib.mkEnableOption "enable shell packages config";
+    pkgs-shellCfg.enable = lib.mkEnableOption "the shell packages config";
   };
 
   config = lib.mkIf config.pkgs-shellCfg.enable {

@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { aliasesCfg.enable = lib.mkEnableOption "enable aliases config"; };
+  options = { aliasesCfg.enable = lib.mkEnableOption "the aliases config"; };
 
   config = lib.mkIf config.aliasesCfg.enable {
     home.shellAliases = {

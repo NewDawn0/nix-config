@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options = { batCfg.enable = lib.mkEnableOption "enable bat config"; };
+  options = { batCfg.enable = lib.mkEnableOption "the bat config"; };
 
   config = lib.mkIf config.batCfg.enable {
     programs.bat = {

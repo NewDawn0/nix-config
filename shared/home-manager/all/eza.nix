@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { ezaCfg.enable = lib.mkEnableOption "enable eza config"; };
+  options = { ezaCfg.enable = lib.mkEnableOption "the eza config"; };
 
   config = lib.mkIf config.ezaCfg.enable {
     programs.eza = {

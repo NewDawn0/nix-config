@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { direnvCfg.enable = lib.mkEnableOption "enable direnv config"; };
+  options = { direnvCfg.enable = lib.mkEnableOption "the direnv config"; };
 
   config = lib.mkIf config.direnvCfg.enable {
     programs.direnv = {

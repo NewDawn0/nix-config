@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { jqCfg.enable = lib.mkEnableOption "enable jq config"; };
+  options = { jqCfg.enable = lib.mkEnableOption "the jq config"; };
 
   config = lib.mkIf config.jqCfg.enable {
     programs.jq = {

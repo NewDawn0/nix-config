@@ -1,6 +1,6 @@
 { config, lib, userInfo, ... }: {
   options = {
-    usersCfg.enable = lib.mkEnableOption "enable users config config";
+    usersCfg.enable = lib.mkEnableOption "the users config";
   };
   config = lib.mkIf config.usersCfg.enable {
     users.users.${userInfo.userName} = {

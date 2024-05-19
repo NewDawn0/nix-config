@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options = { mpvCfg.enable = lib.mkEnableOption "enable mpv config"; };
+  options = { mpvCfg.enable = lib.mkEnableOption "the mpv config"; };
 
   config = lib.mkIf config.mpvCfg.enable {
     programs.mpv = {

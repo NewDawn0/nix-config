@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { bottomCfg.enable = lib.mkEnableOption "enable bottom config"; };
+  options = { bottomCfg.enable = lib.mkEnableOption "the bottom config"; };
 
   config = lib.mkIf config.bottomCfg.enable {
     programs.bottom = {

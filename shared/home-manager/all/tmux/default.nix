@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let themes = import ./themes.nix { inherit pkgs lib; };
 in {
-  options = { tmuxCfg.enable = lib.mkEnableOption "enable tmux config"; };
+  options = { tmuxCfg.enable = lib.mkEnableOption "the tmux config"; };
   config = lib.mkIf config.tmuxCfg.enable {
     programs.tmux = {
       enable = true;

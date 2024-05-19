@@ -1,6 +1,6 @@
 { config, lib, scheme, ... }: {
   options = {
-    starshipCfg.enable = lib.mkEnableOption "enable startship prompt config";
+    starshipCfg.enable = lib.mkEnableOption "the starship prompt config";
   };
 
   config = let

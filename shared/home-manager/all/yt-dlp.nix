@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options = { yt-dlpCfg.enable = lib.mkEnableOption "enable yt-dlp config"; };
+  options = { yt-dlpCfg.enable = lib.mkEnableOption "the yt-dlp config"; };
 
   config = lib.mkIf config.yt-dlpCfg.enable {
     home.packages = with pkgs; [ aria ];

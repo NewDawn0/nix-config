@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  options = { sshCfg.enable = lib.mkEnableOption "enable ssh config"; };
+  options = { sshCfg.enable = lib.mkEnableOption "the ssh config"; };
 
   config = lib.mkIf config.sshCfg.enable {
     programs.ssh = {

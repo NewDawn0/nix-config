@@ -1,6 +1,6 @@
 { config, lib, self, userInfo, ... }: {
   options = {
-    darwin-systemCfg.enable = lib.mkEnableOption "enable darwin system config";
+    darwin-systemCfg.enable = lib.mkEnableOption "the darwin system config";
   };
 
   config = lib.mkIf config.darwin-systemCfg.enable {
