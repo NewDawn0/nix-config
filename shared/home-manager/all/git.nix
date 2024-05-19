@@ -44,9 +44,7 @@
       };
       delta = {
         enable = true;
-        options = {
-          side-by-side = true;
-        };
+        options.side-by-side = true;
       };
       lfs.enable = true;
       signing = {

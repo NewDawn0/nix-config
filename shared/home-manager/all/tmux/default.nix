@@ -11,7 +11,11 @@ in {
       mouse = true;
       resizeAmount = 5;
       tmuxinator.enable = true;
-      plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator themes.everblush yank ];
+      plugins = with pkgs.tmuxPlugins; [
+        vim-tmux-navigator
+        themes.everblush
+        yank
+      ];
       extraConfig = ''
         bind-key -T copy-mode-vi v send-keys -X begin-selection
         bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
@@ -20,7 +24,7 @@ in {
 
         bind '"' split-window -v -c "#{pane_current_path}"
         bind % split-window -h -c "#{pane_current_path}"
-        
+
         bind-key h select-pane -L
         bind-key j select-pane -D
         bind-key k select-pane -U
@@ -41,18 +45,5 @@ in {
                 - vim
               - build:
     '';
-    # xdg.configFile."tmuxinator/build.yml".source = (pkgs.formats.yaml { }).generate "_" {
-    #     name = "build";
-    #     root = ".";
-    #     windows = [{
-    #       editor = {
-    #         layout = "main-horizontal";
-    #         panes = [{
-    #           editor = [ "vim" ];
-    #           build = [ "pwd" ];
-    #         }];
-    #       };
-    #     }];
-    #   };
-    };
+  };
 }

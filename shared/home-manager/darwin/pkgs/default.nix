@@ -1,4 +1,7 @@
-{ config, lib, ... }: with builtins; with lib; let
+{ config, lib, ... }:
+with builtins;
+with lib;
+let
   files = filter (f: f != "default.nix") (attrNames (readDir ./.));
   mergeAttrs = attrs: foldl' (acc: next: acc // next) { } attrs;
   cfgFilesSet = map (f: attrsets.setAttrByPath [ f "enable" ] (mkDefault true))
