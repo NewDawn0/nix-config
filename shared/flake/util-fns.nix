@@ -6,4 +6,5 @@
   # @OUT: <fCfg.enable>
   enableCfgs = prefix: map (f: attrsets.setAttrByPath [ f "enable" ] (mkDefault true))
     (map (f: "${prefix}${f}Cfg") (map (removeSuffix ".nix") files));
+  out = { inherit (fn) imports; } // fn.mergeAttrs enableCfgs;
 }
