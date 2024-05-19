@@ -33,6 +33,7 @@
       utils =
         import ./shared/flake { inherit inputs nixpkgs nixpkgs-unstable; };
       eachSystem = nixpkgs.lib.genAttrs (import inputs.nix-systems);
+      fn = import ./shared/flake/util-fns.nix { inherit (nixpkgs) lib; };
     in {
       devShells = eachSystem (system:
         let inherit (utils.mkPkgs system) pkgs unstable;
@@ -46,7 +47,7 @@
         NewDawn0 = nix-darwin.lib.darwinSystem {
           modules = [ ./hosts/mbpro-2020 ];
           specialArgs = {
-            inherit self home-manager base16 inputs;
+            inherit self home-manager base16 inputs fn;
             inherit (utils.mkInfo "x86_64-darwin" "tom" "NewDawn0")
               userInfo pkgs unstable;
           };

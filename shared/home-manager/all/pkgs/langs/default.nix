@@ -1,14 +1,11 @@
-{ config, lib, pkgs, unstable, ... }: {
-  imports = [ ./nix.nix ./rust.nix ];
+{ config, lib, pkgs, unstable, fn, ... }: {
+  imports = fn.imports ./. (f: ./${f});
 
   options = {
-    pkgs-langsCfg.enable = lib.mkEnableOption "enable language packages config";
+    pkgs-langsCfg.enable = lib.mkEnableOption "the programming languages packages config";
   };
-
-  config = lib.mkIf config.pkgs-langsCfg.enable {
-    pkgs-langs-rustCfg.enable = lib.mkDefault true;
-    pkgs-langs-nixCfg.enable = lib.mkDefault true;
-
+  
+  config = lib.mkIf config.pkgs-langsCfg.enable (fn.mergeAttrs (fn.enableCfgs ./. "pkgs-langs-")) // {
     home.packages = with pkgs; [
       # Any
       gawk
