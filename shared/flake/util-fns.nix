@@ -53,4 +53,10 @@ let
     {
       imports = imports dir func;
     } // mergeAttrs (enableCfgs dir prefix);
-in { inherit files mergeAttrs imports enableCfgs out auto-out; }
+
+  /* Gets the name of the current directory as a string
+     @example: `pwd`
+       -> `"flake"`
+  */
+  pwd = baseNameOf ./.;
+in { inherit files mergeAttrs imports enableCfgs out auto-out pwd options; }
