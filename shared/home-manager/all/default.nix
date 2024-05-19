@@ -16,7 +16,7 @@ let
   ## eg. `a.nix -> aCfg.enable = lib.mkDefault true`
   enableCfgs = map (f: attrsets.setAttrByPath [ f "enable" ] (mkDefault true))
     (map (f: "${f}Cfg") (map (removeSuffix ".nix") files));
-  
+
   # @FINAL <imports, enable>
   # Merge imports with options
   out = { inherit imports; } // mergeAttrs enableCfgs;
