@@ -1,9 +1,9 @@
 { lib, config, ... }: {
   options = {
-    homebrewCfg.enable = lib.mkEnableOption "enable darwin system config";
+    darwin-homebrewCfg.enable = lib.mkEnableOption "enable darwin system config";
   };
 
-  config = lib.mkIf config.homebrewCfg.enable {
+  config = lib.mkIf config.darwin-homebrewCfg.enable {
     homebrew = {
       enable = true;
       global.autoUpdate = false;

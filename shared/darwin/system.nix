@@ -1,9 +1,9 @@
 { config, lib, self, userInfo, ... }: {
   options = {
-    systemCfg.enable = lib.mkEnableOption "enable darwin system config";
+    darwin-systemCfg.enable = lib.mkEnableOption "enable darwin system config";
   };
 
-  config = lib.mkIf config.systemCfg.enable {
+  config = lib.mkIf config.darwin-systemCfg.enable {
     documentation = {
       info.enable = false;
       doc.enable = false;
