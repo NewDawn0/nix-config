@@ -27,7 +27,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, ... }@inputs:
+  outputs =
+    { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, ... }@inputs:
     let
       utils =
         import ./shared/flake { inherit inputs nixpkgs nixpkgs-unstable; };
