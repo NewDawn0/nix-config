@@ -6,7 +6,7 @@
     home = {
       enableNixpkgsReleaseCheck = true;
       stateVersion = "23.11";
-      sessionVariables = { PAGER = "less -R "; };
+      sessionVariables = { PAGER = "less"; };
     };
   };
 }
