@@ -5,18 +5,18 @@
     nixpkgs.url = "github:nixos/nixpkgs";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-systems.url = "github:nix-systems/default";
-    base16.url = "github:SenchoPens/base16.nix";
     rust-overlay = { url = "github:oxalica/rust-overlay"; };
-    tt-schemes = {
-      url = "github:tinted-theming/schemes";
-      flake = false;
-    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-custom-pkgs = {
@@ -27,8 +27,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, base16
-    , ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, ... }@inputs:
     let
       utils =
         import ./shared/flake { inherit inputs nixpkgs nixpkgs-unstable; };
@@ -47,7 +46,7 @@
         NewDawn0 = nix-darwin.lib.darwinSystem {
           modules = [ ./hosts/mbpro-2020 ];
           specialArgs = {
-            inherit self home-manager base16 inputs fn;
+            inherit self home-manager inputs fn;
             inherit (utils.mkInfo "x86_64-darwin" "tom" "NewDawn0")
               userInfo pkgs unstable;
           };

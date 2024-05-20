@@ -1,4 +1,4 @@
-{ config, lib, scheme, ... }: {
+{ config, lib, ... }: {
   options = { zathuraCfg.enable = lib.mkEnableOption "the zathura config"; };
 
   config = lib.mkIf config.zathuraCfg.enable {
@@ -9,10 +9,6 @@
         J = "navigate next";
         "<Left>" = "navigate previous";
         "<Right>" = "navigate next";
-      };
-      options = with scheme.withHashtag; {
-        default-bg = base00;
-        default-fg = base07;
       };
     };
   };

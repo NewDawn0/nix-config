@@ -1,13 +1,12 @@
-{ inputs, self, home-manager, pkgs, unstable, userInfo, colorScheme, config, fn, ... }:
-let scheme = config.scheme;
-in {
+{ inputs, self, pkgs, unstable, userInfo, config, fn, ... }: {
   imports = [
     ../../shared/all
     ../../shared/darwin
-    home-manager.darwinModules.home-manager
+    inputs.home-manager.darwinModules.home-manager
+    inputs.stylix.darwinModules.stylix
   ];
   home-manager = {
-    extraSpecialArgs = { inherit inputs pkgs unstable userInfo scheme fn; };
+    extraSpecialArgs = { inherit inputs pkgs unstable userInfo fn; };
     users.${userInfo.userName} = import ./home.nix;
   };
   programs = {

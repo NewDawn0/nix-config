@@ -5,11 +5,9 @@
     programs.bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batman batgrep ];
-      config = {
-        pager = "less";
-        theme = "everblush";
-      };
+      config.pager = "less";
       themes = {
+        # Not set by default
         everblush = {
           file = "Everblush.tmTheme";
           src = pkgs.fetchFromGitHub {

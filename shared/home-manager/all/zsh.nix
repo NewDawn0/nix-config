@@ -1,4 +1,4 @@
-{ config, lib, pkgs, scheme, ... }: {
+{ config, lib, pkgs, ... }: {
   options = { zshCfg.enable = lib.mkEnableOption "the zsh config"; };
 
   config = lib.mkIf config.zshCfg.enable {
@@ -10,7 +10,7 @@
       syntaxHighlighting.enable = true;
       autosuggestion = {
         enable = true;
-        highlight = with scheme.withHashtag; "fg=${base0E},bg=bold";
+        highlight = with config.lib.stylix.colors.withHashtag; "fg=${base0E},bg=bold";
       };
       history = {
         ignoreAllDups = true;
