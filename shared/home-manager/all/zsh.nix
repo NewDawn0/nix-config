@@ -10,7 +10,8 @@
       syntaxHighlighting.enable = true;
       autosuggestion = {
         enable = true;
-        highlight = with config.lib.stylix.colors.withHashtag; "fg=${base0E},bg=bold";
+        highlight = with config.lib.stylix.colors.withHashtag;
+          "fg=${base0E},bg=bold";
       };
       history = {
         ignoreAllDups = true;
