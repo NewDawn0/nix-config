@@ -9,6 +9,7 @@
       nixgc = "nix-store --gc && nix-store --optimize";
       cp = "cp -i";
       mv = "mv -i";
+      vim = "nvim";
     };
   };
 }
