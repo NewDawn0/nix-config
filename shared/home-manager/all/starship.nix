@@ -1,4 +1,4 @@
-{ config, lib, scheme, ... }: {
+{ config, lib, ... }: {
   options = {
     starshipCfg.enable = lib.mkEnableOption "the starship prompt config";
   };
@@ -37,16 +37,16 @@
 
         # Theming
         palette = "default";
-        palettes.default = with scheme.withHashtag; {
+        palettes.default = with config.lib.stylix.colors.withHashtag; {
           color_fg0 = base07;
-          color_bg1 = base10;
-          color_bg3 = base11;
-          color_blue = base16;
-          color_aqua = base15;
-          color_green = base14;
+          color_bg1 = base00;
+          color_bg3 = base01;
+          color_blue = base0D;
+          color_aqua = base0C;
+          color_green = base0B;
           color_orange = base09;
-          color_purple = base17;
-          color_red = base12;
+          color_purple = base0E;
+          color_red = base08;
           color_yellow = base0A;
         };
 
