@@ -6,6 +6,7 @@
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         astro-build.astro-vscode
+        bbenoist.nix
         bradlc.vscode-tailwindcss
         davidlday.languagetool-linter
         dracula-theme.theme-dracula
@@ -15,6 +16,7 @@
         haskell.haskell
         irongeek.vscode-env
         james-yu.latex-workshop
+        jnoortheen.nix-ide
         mhutchie.git-graph
         ms-pyright.pyright
         ms-python.python
