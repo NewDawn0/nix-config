@@ -28,7 +28,7 @@
              5.5 | material-darker
                5 | ocean
                5 | tarot
-               5 | rose-pine-moon 
+               5 | rose-pine-moon
                5 | ashes
                5 | darkmoss
                5 | eighties
