@@ -10,6 +10,8 @@
       cp = "cp -i";
       mv = "mv -i";
       vim = "nvim";
+      ungit = "mkdir -p tmp && mv .git tmp/";
+      regit = "mv tmp/.git ."
     };
   };
 }
