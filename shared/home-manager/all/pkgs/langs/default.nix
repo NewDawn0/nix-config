@@ -7,7 +7,7 @@
   };
 
   config = lib.mkIf config.pkgs-langsCfg.enable
-    (fn.mergeAttrs (fn.enableCfgs ./. "pkgs-langs-")) // {
+    ((fn.mergeAttrs (fn.enableCfgs ./. "pkgs-langs-")) // {
       home.packages = with pkgs; [
         # Any
         gawk
@@ -39,5 +39,5 @@
         nodePackages.nodemon
         nodejs
       ];
-    };
+    });
 }
