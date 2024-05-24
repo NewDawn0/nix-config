@@ -1,11 +1,10 @@
 { config, lib, ... }: {
   options = {
-    ghCfg.enable = lib.mkEnableOption "the gh config";
     gitCfg.enable = lib.mkEnableOption "the git config";
   };
 
-  config = {
-    programs.git = lib.mkIf config.gitCfg.enable {
+  config = lib.mkIf config.gitCfg.enable {
+    programs.git = {
       enable = true;
       userName = "NewDawn0";
       userEmail = "newdawn.v0.0+git@gmail.com";
@@ -50,17 +49,6 @@
       signing = {
         key = "0xF407CF2A283453F3";
         signByDefault = true;
-      };
-    };
-    programs.gh = lib.mkIf config.ghCfg.enable {
-      enable = true;
-      gitCredentialHelper.enable = true;
-      settings = {
-        git_protocol = "ssh";
-        aliases = {
-          co = "pr checkout";
-          pv = "pr view";
-        };
       };
     };
   };
