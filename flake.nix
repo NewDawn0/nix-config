@@ -19,6 +19,11 @@
       inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ndnvim = {
+      url = "github:NewDawn0/ndnvim";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-custom-pkgs = {
       url = "github:NewDawn0/nix-custom-pkgs";
       inputs.nixpkgs.follows = "nixpkgs";
