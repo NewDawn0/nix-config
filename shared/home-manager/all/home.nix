@@ -5,7 +5,7 @@
     programs.home-manager.enable = true;
     home = {
       enableNixpkgsReleaseCheck = true;
-      stateVersion = "24.05";
+      stateVersion = builtins.substring 0 5 lib.version;
       sessionVariables = { PAGER = "less"; };
     };
   };
