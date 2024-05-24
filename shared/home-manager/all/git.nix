@@ -1,7 +1,5 @@
 { config, lib, ... }: {
-  options = {
-    gitCfg.enable = lib.mkEnableOption "the git config";
-  };
+  options = { gitCfg.enable = lib.mkEnableOption "the git config"; };
 
   config = lib.mkIf config.gitCfg.enable {
     programs.git = {

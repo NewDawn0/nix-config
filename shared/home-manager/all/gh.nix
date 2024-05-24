@@ -1,10 +1,8 @@
-{ config, lib, ...}: {
-  options = {
-    ghCfg.enable = lib.mkEnableOption "the gh config";
-  };
+{ config, lib, ... }: {
+  options = { ghCfg.enable = lib.mkEnableOption "the gh config"; };
 
   config = lib.mkIf config.ghCfg.enable {
-    programs.gh =  {
+    programs.gh = {
       enable = true;
       gitCredentialHelper.enable = true;
       settings = {
