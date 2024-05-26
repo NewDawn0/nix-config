@@ -20,7 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ndnvim = {
-      url = "github:NewDawn0/ndnvim";
+      # url = "github:NewDawn0/ndnvim";
+      url = "path:./lol/ndnvim";
       inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -42,11 +43,11 @@
     in {
       devShells = eachSystem (system:
         let inherit (utils.mkPkgs system) pkgs unstable;
-        in {
-          macEnv = pkgs.callPackage ./devShells/macEnv.nix { inherit pkgs; };
-          prefetchers =
-            pkgs.callPackage ./devShells/prefetchers.nix { inherit pkgs; };
-        });
+        in with pkgs.lib;
+        fn.mergeAttrs (map (f:
+          (attrsets.setAttrByPath [ (removeSuffix ".nix" f) ]
+            (pkgs.callPackage ./devShells/${f} { inherit pkgs; })))
+          (fn.files ./devShells)));
       nixosConfigurations = { };
       darwinConfigurations = {
         NewDawn0 = nix-darwin.lib.darwinSystem {

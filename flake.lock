@@ -312,17 +312,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1716587923,
-        "narHash": "sha256-VvQZb/bV+H3UQzlcTOJZhJRgnUAnKUzR0TWNqnp/pHc=",
-        "owner": "NewDawn0",
-        "repo": "ndnvim",
-        "rev": "9da3b0de3dd6daea0850bb270576009b8b9b7937",
-        "type": "github"
+        "lastModified": 1,
+        "narHash": "sha256-9t2q+2IKm2hNhHo/RgKOJtkkcBPbE4R1wKcKWqLAKkA=",
+        "path": "./lol/ndnvim",
+        "type": "path"
       },
       "original": {
-        "owner": "NewDawn0",
-        "repo": "ndnvim",
-        "type": "github"
+        "path": "./lol/ndnvim",
+        "type": "path"
       }
     },
     "nix-custom-pkgs": {
@@ -442,11 +439,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1716586062,
-        "narHash": "sha256-Ju1J2LFaldlguJtBlfgb11rBF9Axt99Le2FlbUBwbro=",
+        "lastModified": 1716596082,
+        "narHash": "sha256-YqZM2YxghM/LMXbMON16APlxxegfz1w7wsrw9aQCpOI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "78aabf0aa5037c75d4ab6772a1b66cfe2ade5ac7",
+        "rev": "0c770bd8b2bf99d440626f5c71015e9042922ae7",
         "type": "github"
       },
       "original": {
