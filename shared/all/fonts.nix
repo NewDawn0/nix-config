@@ -3,8 +3,7 @@
 
   config = lib.mkIf config.fontsCfg.enable {
     fonts = {
-      fontDir.enable = true;
-      fonts = with pkgs; [
+      packages = with pkgs; [
         font-awesome
         (nerdfonts.override {
           fonts = [
