@@ -8,19 +8,20 @@
       cpufetch
       curl
       entr
+      fastfetch
       fd
       ffmpeg
       figlet
       file
+      gitleaks
       gnused
       jq
       killall
-      fastfetch
       nix-output-monitor
       nvd
-      unstable.nh
       onefetch
       ripgrep
+      unstable.nh
       wget
     ];
   };
