@@ -8,7 +8,8 @@
       /* Some themes I like
          @NOTE: I truncated themes with a rating below 5
          @NOTE: For custom themes like everblush use a nix path
-            eg. `base16Scheme = ./themes/everblush.yaml;`
+             eg. `base16Scheme = ./themes/everblush.yaml;`
+             otherwise use `base16Scheme = "${pkgs.base16-schemes}/share/themes/<theme>.yaml"`
          Rating  | name
                9 | everblush
                9 | ayu-dark
@@ -35,9 +36,11 @@
       */
       base16Scheme = ./themes/everblush.yaml;
       polarity = "dark";
+      enable = true;
+      opacity.terminal = 0.95;
       image = pkgs.fetchurl {
         # Use specific commit link as normal link might change
-        hash = pkgs.lib.fakeHash;
+        hash = "sha256-qK+o6/Q0JemdWEXK8DgHC0zw9zFJ4fySJd9aPxx/KPA=";
         url =
           "https://github.com/NewDawn0/walls/blob/e4ce95f7eed5f76f8ce094489c83560712289a66/src/keyz.png";
       };
