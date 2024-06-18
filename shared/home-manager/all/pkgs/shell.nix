@@ -7,6 +7,7 @@
     home.packages = with pkgs; [
       cpufetch
       curl
+      entr
       fd
       ffmpeg
       figlet
