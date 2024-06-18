@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, unstable, ... }: {
   options = { yt-dlpCfg.enable = lib.mkEnableOption "the yt-dlp config"; };
 
   config = lib.mkIf config.yt-dlpCfg.enable {
     home.packages = with pkgs; [ aria ];
     programs.yt-dlp = {
       enable = true;
+      package = unstable.yt-dlp;
       extraConfig = ''
         --update
         -F
