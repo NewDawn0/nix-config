@@ -1,1 +1,1 @@
-{ lib, fn, ... }: fn.auto-out ./. (f: ./${f}) "darwin-"
+{ fn, ... }: fn.auto-out ./. (f: ./${f}) "darwin-"
