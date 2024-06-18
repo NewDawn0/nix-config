@@ -1,4 +1,5 @@
-{ pkgs, unstable, ... }: {
+{ ... }: {
   imports = [ ../../shared/home-manager/darwin ../../shared/home-manager/all ];
-  fehCfg.enable = false;
+  mpvCfg.enable = false;
+  pkgs-miscCfg.enable = true;
 }

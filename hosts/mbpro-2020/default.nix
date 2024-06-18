@@ -1,4 +1,4 @@
-{ inputs, self, pkgs, unstable, userInfo, config, fn, ... }: {
+{ inputs, pkgs, unstable, userInfo, fn, ... }: {
   imports = [
     ../../shared/all
     ../../shared/darwin
@@ -14,4 +14,5 @@
     bash.enable = true;
   };
   environment.systemPackages = with pkgs; [ binutils coreutils less vim ];
+  stylixCfg.enable = true;
 }
