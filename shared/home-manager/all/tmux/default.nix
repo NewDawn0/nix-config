@@ -35,7 +35,7 @@ in {
       '';
     };
     xdg.configFile."tmuxinator/build.yml".text = ''
-      name: build 
+      name: build
       root: .
       windows:
         - editor:

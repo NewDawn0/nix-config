@@ -27,7 +27,6 @@
             lines = 24;
           };
           dynamic_title = true;
-          opacity = lib.mkIf pkgs.stdenv.isDarwin (lib.mkForce 0.95);
           option_as_alt = "None";
           padding = {
             x = 0;

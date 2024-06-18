@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, unstable, ... }: {
+{ config, lib, inputs, ... }: {
   imports = [ inputs.ndnvim.homeManagerModules.ndnvim ];
 
   options = { homeCfg.enable = lib.mkEnableOption "the home config"; };

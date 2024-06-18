@@ -1,1 +1,1 @@
-{ lib, fn, ... }: fn.auto-out ./. (f: ./${f}) ""
+{ fn, ... }: fn.auto-out ./. (f: ./${f}) ""
