@@ -14,6 +14,7 @@
       notify
       translate
       up
+      vocab
     ];
   };
 }
