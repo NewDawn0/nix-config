@@ -4,6 +4,11 @@
   };
 
   config = lib.mkIf config.pkgs-appsCfg.enable {
-    home.packages = with pkgs; [ discord gimp jetbrains.idea-community ];
+    home.packages = with pkgs; [
+      discord
+      gimp
+      jetbrains.idea-community
+      postman
+    ];
   };
 }
