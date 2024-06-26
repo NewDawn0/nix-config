@@ -6,6 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-systems.url = "github:nix-systems/default";
     rust-overlay = { url = "github:oxalica/rust-overlay"; };
+    ndnvim.url = "github:NewDawn0/ND-Nvim";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,13 +16,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
+      # url = "path:/Users/tom/GitHub/stylix";
       url = "github:danth/stylix";
-      inputs.home-manager.follows = "home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ndnvim = {
-      # url = "github:NewDawn0/ndnvim";
-      url = "path:./lol/ndnvim";
       inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -42,7 +38,7 @@
       fn = import ./shared/flake/util-fns.nix { inherit (nixpkgs) lib; };
     in {
       devShells = eachSystem (system:
-        let inherit (utils.mkPkgs system) pkgs unstable;
+        let inherit (utils.mkPkgs system) pkgs;
         in with pkgs.lib;
         fn.mergeAttrs (map (f:
           (attrsets.setAttrByPath [ (removeSuffix ".nix" f) ]
