@@ -1,4 +1,4 @@
-{ config, lib, inputs, ... }: {
+{ config, lib, inputs, userInfo, ... }: {
   imports = [ inputs.ndnvim.homeManagerModules.ndnvim ];
 
   options = { homeCfg.enable = lib.mkEnableOption "the home config"; };
@@ -8,7 +8,10 @@
     home = {
       enableNixpkgsReleaseCheck = true;
       stateVersion = builtins.substring 0 5 lib.version;
-      sessionVariables = { PAGER = "less"; };
+      sessionVariables = {
+        PAGER = "less";
+        PATH = "$PATH:${userInfo.userHome}/go/bin/";
+      };
     };
   };
 }
