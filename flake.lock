@@ -303,11 +303,11 @@
     },
     "ndnvim": {
       "locked": {
-        "lastModified": 1719063622,
-        "narHash": "sha256-487EajM7YWtCSFvE2s1Ns7SUIXFjSHuUMehkCHS8GoE=",
+        "lastModified": 1719453765,
+        "narHash": "sha256-D7TJpt1cIH5qzdk7KdeP3F3P4MRSd5X6lqcEZUAM/bg=",
         "owner": "NewDawn0",
         "repo": "ND-Nvim",
-        "rev": "992a7a1f7e5d8126ede604f3766b62b2a602a5f8",
+        "rev": "4c4a1583b595388a6841373dcaba3a2ec65d9df6",
         "type": "github"
       },
       "original": {
