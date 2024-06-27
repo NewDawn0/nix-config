@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, ... }: {
+{ config, lib, pkgs, ... }: {
   options = {
     pkgs-miscCfg.enable =
       lib.mkEnableOption "enable miscellaneous packages config";
@@ -15,9 +15,9 @@
       texliveSmall
       timg
       typos
-      unstable.ani-cli
+      # unstable.ani-cli # Will reanable until swift-5.8 builds
       write-good
-      ytfzf
+      # ytfzf # Will reanable until swift-5.8 builds
     ];
   };
 }
