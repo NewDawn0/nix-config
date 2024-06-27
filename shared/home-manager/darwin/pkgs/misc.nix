@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, ... }: {
+{ config, lib, pkgs, ... }: {
   options = {
     darwin-pkgs-miscCfg.enable =
       lib.mkEnableOption "enable darwin miscellaneous packages config";
