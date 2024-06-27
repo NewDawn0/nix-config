@@ -1,6 +1,6 @@
 { config, lib, ... }: {
   options = { langCfg.enable = lib.mkEnableOption "the language config"; };
-  config = {
+  config = lib.mkIf config.langCfg.enable {
     home.language = {
       measurement = "metric";
       base = "en_GB";
