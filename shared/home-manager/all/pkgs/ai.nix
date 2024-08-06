@@ -4,6 +4,8 @@
   };
 
   config = lib.mkIf config.pkgs-aiCfg.enable {
-    home.packages = with pkgs; [ tgpt ollama ];
+    home.packages = with pkgs; [ tgpt 
+    # ollama 
+    ];
   };
 }
