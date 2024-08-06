@@ -1,6 +1,4 @@
-{ config, lib, inputs, userInfo, ... }: {
-  imports = [ inputs.ndnvim.homeManagerModules.ndnvim ];
-
+{ config, lib, userInfo, ... }: {
   options = { homeCfg.enable = lib.mkEnableOption "the home config"; };
 
   config = lib.mkIf config.homeCfg.enable {
@@ -9,6 +7,7 @@
       enableNixpkgsReleaseCheck = true;
       stateVersion = builtins.substring 0 5 lib.version;
       sessionVariables = {
+        EDITOR = "nvim";
         PAGER = "less";
         PATH = "$PATH:${userInfo.userHome}/go/bin/";
       };
