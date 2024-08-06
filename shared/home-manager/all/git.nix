@@ -37,7 +37,7 @@
       extraConfig = {
         init.defaultBranch = "master";
         push.autoSetupRemote = true;
-        pull.rebase = false;
+        pull.rebase = true;
       };
       delta = {
         enable = true;
