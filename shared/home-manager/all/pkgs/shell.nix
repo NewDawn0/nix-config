@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, ... }: {
+{ config, lib, pkgs, ... }: {
   options = {
     pkgs-shellCfg.enable = lib.mkEnableOption "the shell packages config";
   };
@@ -17,11 +17,8 @@
       gnused
       jq
       killall
-      nix-output-monitor
-      nvd
       onefetch
       ripgrep
-      unstable.nh
       wget
     ];
   };

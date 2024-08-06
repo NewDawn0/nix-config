@@ -15,7 +15,7 @@
         luajitPackages.luarocks
         nasm
         python3
-        unstable.gleam
+        gleam
         zig
         # C/C++ dev
         cmake

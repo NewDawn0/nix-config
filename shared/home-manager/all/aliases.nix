@@ -3,14 +3,17 @@
 
   config = lib.mkIf config.aliasesCfg.enable {
     home.shellAliases = {
+      cp = "cp -i";
+      diff = "diff --color -u";
+      grep = "grep --color=always";
+      mv = "mv -i";
       nix-flake-update = ''
         fd flake.nix | xargs dirname | xargs -I {} sh -c "cd {} && nix flake update"'';
-      diff = "diff --color -u";
       nixgc = "nix-store --gc && nix-store --optimize";
-      cp = "cp -i";
-      mv = "mv -i";
-      ungit = "mkdir -p tmp && mv .git tmp/";
       regit = "mv tmp/.git .";
+      ungit = "mkdir -p tmp && mv .git tmp/";
+      vi = "nvim";
+      vim = "nvim";
     };
   };
 }

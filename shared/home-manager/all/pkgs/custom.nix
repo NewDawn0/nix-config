@@ -5,6 +5,7 @@
 
   config = lib.mkIf config.pkgs-customCfg.enable {
     home.packages = with pkgs; [
+      (ndnvim.override { langs.all.enabled = true; })
       ansi
       dirStack
       ex
