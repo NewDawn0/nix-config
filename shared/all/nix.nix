@@ -15,7 +15,6 @@ in {
 
     # Enable daemon
     services.nix-daemon.enable = true;
-    checkConfig = true;
 
     # Nix pkg manager config
     nix = {
