@@ -7,13 +7,9 @@
       diff = "diff --color -u";
       grep = "grep --color=always";
       mv = "mv -i";
-      nix-flake-update = ''
-        fd flake.nix | xargs dirname | xargs -I {} sh -c "cd {} && nix flake update"'';
       nixgc = "nix-store --gc && nix-store --optimize";
-      regit = "mv tmp/.git .";
+      regit = "mv tmp/.git . && rmdir tmp";
       ungit = "mkdir -p tmp && mv .git tmp/";
-      vi = "nvim";
-      vim = "nvim";
     };
   };
 }
