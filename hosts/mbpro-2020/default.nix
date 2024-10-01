@@ -13,6 +13,6 @@
     zsh.enable = true;
     bash.enable = true;
   };
-  environment.systemPackages = with pkgs; [ binutils coreutils less vim ];
+  environment.systemPackages = with pkgs; [ binutils coreutils less ];
   stylixCfg.enable = true;
 }
