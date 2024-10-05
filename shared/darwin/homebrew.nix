@@ -31,6 +31,7 @@
         "firefox"
         "github"
         "languagetool"
+	"mpv"
         "obs"
         "obsidian"
         "obsidian"
