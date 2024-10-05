@@ -281,11 +281,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable"
       },
       "locked": {
-        "lastModified": 1727812221,
-        "narHash": "sha256-Sr0gcXTcgrmJxpqPe4aqxm12ABC8jvMSAKIjQDUyKb0=",
+        "lastModified": 1728168971,
+        "narHash": "sha256-9bENhNZjupw2vxPknBkagB8mhQYnRy3O2cdtYVSAtaY=",
         "owner": "NewDawn0",
         "repo": "ND-Nvim",
-        "rev": "abc1f0abafcdaf51af37d4eac402b9d612ecc5db",
+        "rev": "eeb2bc173f67a4f0ba2601f3826e88c71fe07a90",
         "type": "github"
       },
       "original": {
