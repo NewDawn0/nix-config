@@ -9,7 +9,7 @@
       enable = true;
       global.autoUpdate = false;
       taps = [ "homebrew/services" ];
-      brews = [ { name = "ghcup"; } { name = "openssl@3"; } ];
+      brews = [ { name = "ghcup"; } { name = "openssl@3"; } { name = "mpv"; } ];
       onActivation = {
         autoUpdate = true;
         cleanup = "zap";
@@ -31,7 +31,6 @@
         "firefox"
         "github"
         "languagetool"
-	"mpv"
         "obs"
         "obsidian"
         "obsidian"
