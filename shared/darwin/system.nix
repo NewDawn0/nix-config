@@ -78,29 +78,29 @@
         NSAutomaticWindowAnimationsEnabled = true;
         NSDisableAutomaticTermination = false;
         NSWindowResizeTime = 1.0e-3;
-        screensaver.askForPassword = true;
-        spaces.spans-displays = false;
         # Keyboard
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
 
-        SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
-
-        trackpad = {
-          ActuationStrength = 0;
-          Clicking = true;
-          Dragging = false;
-          FirstClickThreshold = 0;
-          SecondClickThreshold = 0;
-          TrackpadRightClick = true;
-          TrackpadThreeFingerDrag = false;
-        };
       };
-      networking = {
-        computerName = userInfo.hostName;
-        hostName = userInfo.hostName;
-        localHostName = userInfo.hostName;
+      spaces.spans-displays = false;
+      screensaver.askForPassword = true;
+      SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+
+      trackpad = {
+        ActuationStrength = 0;
+        Clicking = true;
+        Dragging = false;
+        FirstClickThreshold = 0;
+        SecondClickThreshold = 0;
+        TrackpadRightClick = true;
+        TrackpadThreeFingerDrag = false;
       };
     };
+  };
+  networking = {
+    computerName = userInfo.hostName;
+    hostName = userInfo.hostName;
+    localHostName = userInfo.hostName;
   };
 }
