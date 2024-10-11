@@ -21,7 +21,17 @@ let
         if type == "directory" then
           checkDirRec "${path}/${name}" "${prefix}${name}-"
         else if type == "regular" && lib.hasSuffix ".nix" name then
-          [ (mkModule prefix path name true) ]
+          # Check if shared
+          if builtins.baseNameOf path == "all" then
+            [ (mkModule prefix path name true) ]
+          # Check if darwin system
+          else if builtins.baseNameOf path == "darwin" && lib.hasSuffix "darwin" userInfo.system then
+            [ (mkModule prefix path name true) ]
+          # Check if linux system
+          else if builtins.baseNameOf path == "linux" && lib.hasSuffix "linux" userInfo.system then
+            [ (mkModule prefix path name true) ]
+          else
+            null
         else
           null) (builtins.readDir path);
       # Flatten list and remove nulls
