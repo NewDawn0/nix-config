@@ -1,0 +1,21 @@
+system: "base16"
+name: "Everblush"
+author: "NewDawn0 (Tom) (https://github.com/NewDawn0)"
+variant: "dark"
+palette:
+  base00: "141b1e" # black
+  base01: "1c2326" # grey 4
+  base02: "232a2d" # grey 3
+  base03: "2e3538" # grey 2
+  base04: "3a4144" # grey
+  base05: "c8c8c8" # white 3
+  base06: "d0d0d0" # white 2
+  base07: "dadada" # white
+  base08: "e57474" # red
+  base09: "f0944d" # orange
+  base0A: "e5c76b" # yellow
+  base0B: "8ccf7e" # green
+  base0C: "6cbfbf" # cyan
+  base0D: "67b0e8" # blue
+  base0E: "c47fd5" # magenta
+  base0F: "ef7e7e" # red light
