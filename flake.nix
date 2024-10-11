@@ -4,6 +4,7 @@
     nixpkgs.url = "github:nixos/nixpkgs";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-systems.url = "github:nix-systems/default";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     ndnvim.url = "github:NewDawn0/ND-Nvim";
     home-manager = {
       url = "github:nix-community/home-manager";
