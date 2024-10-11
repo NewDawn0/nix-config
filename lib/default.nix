@@ -8,8 +8,9 @@ let
   mkArgs = system: hostName: userName:
     let
       overlays = import ./overlays.nix { inherit inputs; };
+      config = { allowUnfree = true; };
       unstable = nixpkgs-unstable.legacyPackages.${system};
-      pkgs = import nixpkgs { inherit system overlays; };
+      pkgs = import nixpkgs { inherit config overlays system; };
       userInfo = {
         inherit hostName system userName;
         installPath = builtins.baseNameOf ./.;
