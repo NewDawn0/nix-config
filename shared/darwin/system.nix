@@ -13,13 +13,21 @@
         launchanim = true;
         magnification = false;
         orientation = "left";
+        persistent-apps = [
+          "${pkgs.alacritty}/Applications/Alacritty.app"
+          "/Applications/Orion.app"
+          "${pkgs.obsidian}/Applications/Obsidian.app"
+          "/System/Applications/Calendar.app"
+          "/Applications/Microsoft Outlook.app"
+        ];
         show-recents = false;
         showhidden = true;
         tilesize = 48;
       };
+      finder.FXPreferredViewStyle = "clmv";
       loginwindow = {
         GuestEnabled = false;
-        PowerOffDisabledWhileLoggedIn = false; 
+        PowerOffDisabledWhileLoggedIn = false;
         RestartDisabled = false;
         RestartDisabledWhileLoggedIn = false;
         SHOWFULLNAME = false;
@@ -47,6 +55,7 @@
         # Font
         AppleFontSmoothing = 2;
         AppleInterfaceStyleSwitchesAutomatically = false;
+        AppleInterfaceStyle = "Dark";
         # Units
         AppleMetricUnits = 1;
         # Finder
