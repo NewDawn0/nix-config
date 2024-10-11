@@ -1,4 +1,4 @@
-{ self, userInfo, ... }: {
+{ pkgs, self, userInfo, ... }: {
   documentation = {
     info.enable = false;
     doc.enable = false;
