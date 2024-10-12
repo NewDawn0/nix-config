@@ -6,8 +6,8 @@ let
       util;
   };
 in {
-  imports = importPath ../../shared ++ [
-    # inputs.home-manager.darwinModules.home-manager
+  imports = importPath ../../shared/system ++ [
+    inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.stylix.darwinModules.stylix
   ];

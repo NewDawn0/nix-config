@@ -39,8 +39,6 @@ let
           else if builtins.baseNameOf path == "linux"
           && lib.hasSuffix "linux" userInfo.system then
             [ (mkModule prefix path name true) ]
-          else if builtins.baseNameOf path == "home-manager" then
-            [ (mkModule prefix path name true) ]
           else
             null
         else
