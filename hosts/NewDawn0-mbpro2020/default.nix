@@ -6,7 +6,11 @@ let
       util;
   };
 in {
-  imports = importPath ../../shared;
+  imports = importPath ../../shared ++ [
+    # inputs.home-manager.darwinModules.home-manager
+    inputs.nix-homebrew.darwinModules.nix-homebrew
+    inputs.stylix.darwinModules.stylix
+  ];
   programs.zsh.enable = true;
-  environment.systemPackages = with pkgs; [ ndnvim ];
+  environment.systemPackages = with pkgs; [ ndnvim blockbench prismlauncher ];
 }
