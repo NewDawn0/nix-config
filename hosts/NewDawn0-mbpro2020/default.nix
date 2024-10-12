@@ -11,6 +11,11 @@ in {
     inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.stylix.darwinModules.stylix
   ];
-  programs.zsh.enable = true;
-  environment.systemPackages = with pkgs; [ ndnvim blockbench prismlauncher ];
+  environment.systemPackages = with pkgs; [
+    coreutils
+    less
+    ndnvim
+    blockbench
+    prismlauncher
+  ];
 }
