@@ -24,13 +24,13 @@ let
         if type == "directory" then
           checkDirRec "${path}/${name}" "${prefix}${name}-"
         else if type == "regular" && lib.hasSuffix ".nix" name then
-        # Check if shared
+          # Check if shared
           if builtins.baseNameOf path == "all" then
             [
               (mkModule prefix path name true)
             ]
             # Check if darwin system
-          else if builtins.baseNameOf path == "darwin"
+          if builtins.baseNameOf path == "darwin"
           && lib.hasSuffix "darwin" userInfo.system then
             [
               (mkModule prefix path name true)
@@ -38,6 +38,8 @@ let
             # Check if linux system
           else if builtins.baseNameOf path == "linux"
           && lib.hasSuffix "linux" userInfo.system then
+            [ (mkModule prefix path name true) ]
+          else if builtins.baseNameOf path == "home-manager" then
             [ (mkModule prefix path name true) ]
           else
             null
