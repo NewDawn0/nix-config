@@ -1,17 +1,14 @@
 { inputs, lib, userInfo, ... }: {
   nix-homebrew = {
     enable = true;
-    enableRosetta = if lib.hasPrefix "aarch64" userInfo.system then true else false;
+    enableRosetta =
+      if lib.hasPrefix "aarch64" userInfo.system then true else false;
     user = userInfo.userName;
     mutableTaps = true;
   };
   homebrew = {
     enable = true;
-    brews = [
-      "mas"
-      "mpv"
-      "openssl@3"
-    ]; 
+    brews = [ "mas" "mpv" "openssl@3" ];
     casks = [
       "amethyst"
       "appcleaner"
