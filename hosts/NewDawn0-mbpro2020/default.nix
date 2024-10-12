@@ -11,6 +11,10 @@ in {
     inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.stylix.darwinModules.stylix
   ];
+  home-manager = {
+    extraSpecialArgs = { inherit inputs pkgs unstable userInfo fn; };
+    users.${userInfo.userName} = import ./home.nix;
+  };
   environment.systemPackages = with pkgs; [
     coreutils
     less
