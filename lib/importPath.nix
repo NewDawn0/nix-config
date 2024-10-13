@@ -1,8 +1,7 @@
-{ config, home-manager, inputs, lib, overlays, pkgs, self, unstable, userInfo
-, util, ... }:
+{ config, inputs, lib, overlays, pkgs, self, unstable, userInfo, util, ... }:
 let
-  mkModule = prefix: path: file: enabled:
-    let fname = lib.removeSuffix ".nix" (builtins.baseNameOf file);
+  mkModule = prefix: path: name: enabled:
+    let fname = lib.removeSuffix ".nix" (builtins.baseNameOf name);
     in {
       options = {
         "${prefix}${fname}Cfg".enable = lib.mkOption {
@@ -12,11 +11,30 @@ let
         };
       };
       config = lib.mkIf config."${prefix}${fname}Cfg".enable
-        (builtins.import "${path}/${file}" {
-          inherit config home-manager inputs lib overlays pkgs self unstable
-            userInfo util;
+        (builtins.import "${path}/${name}" {
+          inherit config inputs lib overlays pkgs self unstable userInfo util;
         });
     };
+
+  mkModuleWrapper = with builtins;
+    prefix: path: name:
+    # Check all systems
+    if match ".*all.*" (toString path) != null then
+      [
+        (mkModule prefix path name true)
+      ]
+      # Check darwin
+    else if match ".*darwin.*" (toString path) != null
+    && lib.hasSuffix "darwin" userInfo.system then
+      [
+        (mkModule prefix path name true)
+      ]
+      # Check linux 
+    else if match ".*linux.*" (toString path) != null
+    && lib.hasSuffix "linux" userInfo.system then
+      [ (mkModule prefix path name true) ]
+    else
+      null;
 
   checkDirRec = path: prefix:
     let
@@ -24,23 +42,7 @@ let
         if type == "directory" then
           checkDirRec "${path}/${name}" "${prefix}${name}-"
         else if type == "regular" && lib.hasSuffix ".nix" name then
-        # Check if shared
-          if builtins.baseNameOf path == "all" then
-            [
-              (mkModule prefix path name true)
-            ]
-            # Check if darwin system
-          else if builtins.baseNameOf path == "darwin"
-          && lib.hasSuffix "darwin" userInfo.system then
-            [
-              (mkModule prefix path name true)
-            ]
-            # Check if linux system
-          else if builtins.baseNameOf path == "linux"
-          && lib.hasSuffix "linux" userInfo.system then
-            [ (mkModule prefix path name true) ]
-          else
-            null
+          mkModuleWrapper prefix path name
         else
           null) (builtins.readDir path);
       # Flatten list and remove nulls
@@ -51,5 +53,9 @@ let
   /* ImportPath imports all the subsequent files in a path converts them to modules and enables/disables them
      @param: {path}    dir     -- The directory where files are taken from
   */
-  importPath = path: (checkDirRec path "");
+  importPath = path:
+    if lib.hasSuffix "home-manager" (builtins.baseNameOf path) then
+      checkDirRec path "hm-"
+    else
+      checkDirRec path "";
 in importPath
