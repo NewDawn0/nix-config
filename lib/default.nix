@@ -18,19 +18,20 @@ let
           + userName;
       };
     in { inherit overlays pkgs unstable userInfo; };
-  
+
   mkPkgs = system: overlays:
-    let config = { allowUnfree = true; }; in {
+    let config = { allowUnfree = true; };
+    in {
       pkgs = import nixpkgs { inherit config overlays system; };
       unstable = nixpkgs-unstable.legacyPackages.${system};
     };
 
-  /* Set up each shell in ../shells for each system */
+  # Set up each shell in ../shells for each system
   mkShells = eachSystem (system:
     let inherit (mkPkgs system) pkgs unstable;
     in shellsForSystem pkgs unstable);
 
-  /* Set up each shell in ../shells */
+  # Set up each shell in ../shells
   shellsForSystem = pkgs: unstable:
     let
       files = with builtins; attrNames (readDir ../shells);
