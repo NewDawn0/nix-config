@@ -26,8 +26,7 @@
     };
   };
 
-  outputs =
-    inputs@{ self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nix-darwin, ... }:
     let util = import ./lib { inherit inputs nixpkgs nixpkgs-unstable; };
     in {
       nixosConfigurations = { };
@@ -35,7 +34,7 @@
         NewDawn0-mbpro2020 = nix-darwin.lib.darwinSystem {
           modules = [ ./hosts/NewDawn0-mbpro2020 ];
           specialArgs = {
-            inherit self home-manager inputs;
+            inherit self inputs;
             inherit (util.mkArgs "x86_64-darwin" "NewDawn0-mbpro2020" "tom")
               userInfo pkgs unstable overlays;
           };
