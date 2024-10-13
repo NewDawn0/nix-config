@@ -29,6 +29,7 @@
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nix-darwin, ... }:
     let util = import ./lib { inherit inputs nixpkgs nixpkgs-unstable; };
     in {
+      devShells = util.mkShells;
       nixosConfigurations = { };
       darwinConfigurations = {
         NewDawn0-mbpro2020 = nix-darwin.lib.darwinSystem {
