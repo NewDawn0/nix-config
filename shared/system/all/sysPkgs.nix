@@ -11,6 +11,7 @@
     killall
     less
     nixfmt-classic
+    pkg-config
     ripgrep
     wget
   ];
