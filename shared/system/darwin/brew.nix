@@ -14,7 +14,6 @@
       "appcleaner"
       "balenaetcher"
       "firefox"
-      "firefox"
       "github"
       "hammerspoon"
       "iina"
@@ -28,6 +27,7 @@
       "whatsapp"
     ];
     masApps = {
+      DavinciResolve = 571213070;
       Shazam = 897118787;
       XCode = 497799835;
     };
