@@ -8,7 +8,7 @@ build: patch
 	make unpatch
 
 clean:
-	@echo "Cleaning up"
+	@echo "Cleaning up..."
 	nix-store --gc
 	nix-store --optimize
 
@@ -17,7 +17,7 @@ install-nix:
 	sh <(curl -L https://nixos.org/nix/install) --daemon
 
 patch:
-	@echo "Patching some variables"
+	@echo "Patching variables..."
 	sed -i "s|<- NIX_INSTALL_DIR ->|$(NIX_INSTALL_DIR)|g" ./shared/home-manager/all/general.nix
 
 rebuild: patch
@@ -26,5 +26,5 @@ rebuild: patch
 	make unpatch
 
 unpatch:
-	@echo "Resetting some vars"
+	@echo "Resetting variables..."
 	sed -i "s|$(NIX_INSTALL_DIR)|<- NIX_INSTALL_DIR ->|g" ./shared/home-manager/all/general.nix
