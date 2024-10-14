@@ -1,4 +1,4 @@
-.PHONY: build rebuild install-nix patch unpatch
+.PHONY: build clean install-nix patch rebuild unpatch
 
 NIX_INSTALL_DIR := $(shell pwd)
 
@@ -7,10 +7,10 @@ build: patch
 	nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .
 	make unpatch
 
-rebuild: patch
-	@echo "Rebuilding the system configuration..."
-	darwin-rebuild switch --flake .
-	make unpatch
+clean:
+	@echo "Cleaning up"
+	nix-store --gc
+	nix-store --optimize
 
 install-nix:
 	@echo "Installing Nix..."
@@ -19,6 +19,11 @@ install-nix:
 patch:
 	@echo "Patching some variables"
 	sed -i "s|<- NIX_INSTALL_DIR ->|$(NIX_INSTALL_DIR)|g" ./shared/home-manager/all/general.nix
+
+rebuild: patch
+	@echo "Rebuilding the system configuration..."
+	darwin-rebuild switch --flake .
+	make unpatch
 
 unpatch:
 	@echo "Resetting some vars"
