@@ -6,6 +6,7 @@
     stateVersion = builtins.substring 0 5 lib.version;
     sessionVariables = {
       EDITOR = "nvim";
+      NIX_INSTALL_DIR = "<- NIX_INSTALL_DIR ->";
       PAGER = "less";
       PATH = "$PATH:${userInfo.userHome}/go/bin/";
     };
