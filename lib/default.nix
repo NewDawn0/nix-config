@@ -10,7 +10,7 @@ let
   mkArgs = system: hostName: userName:
     let
       overlays = import ./overlays.nix { inherit inputs; };
-      inherit (mkPkgs system overlays) pkgs unstable;
+      inherit (mkPkgs { inherit system overlays; }) pkgs unstable;
       userInfo = {
         inherit hostName system userName;
         installPath = builtins.baseNameOf ./.;
@@ -19,7 +19,7 @@ let
       };
     in { inherit overlays pkgs unstable userInfo; };
 
-  mkPkgs = system: overlays:
+  mkPkgs = { system, overlays ? [ ] }:
     let config = { allowUnfree = true; };
     in {
       pkgs = import nixpkgs { inherit config overlays system; };
@@ -28,15 +28,16 @@ let
 
   # Set up each shell in ../shells for each system
   mkShells = eachSystem (system:
-    let inherit (mkPkgs system) pkgs unstable;
+    let inherit (mkPkgs { inherit system; }) pkgs unstable;
     in shellsForSystem pkgs unstable);
 
   # Set up each shell in ../shells
   shellsForSystem = pkgs: unstable:
     let
       files = with builtins; attrNames (readDir ../shells);
-      fnames = builtins.map (f: lib.removeSuffix ".nix" f) files;
-      shellAttrs = builtins.map (f: lib.attrsets.setAttrByPath [ f ] f) fnames;
+      shellAttrs = builtins.map (f:
+        lib.attrsets.setAttrByPath [ (lib.removeSuffix ".nix" f) ]
+        (pkgs.callPackage ../shells/${f} { inherit pkgs unstable; })) files;
     in mergeAttrs shellAttrs;
 
   eachSystem = nixpkgs.lib.genAttrs (import inputs.nix-systems);
