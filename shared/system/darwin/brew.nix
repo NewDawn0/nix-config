@@ -23,6 +23,7 @@
       "microsoft-powerpoint"
       "microsoft-word"
       "obs"
+      "qflipper"
       "raycast"
       "whatsapp"
     ];
