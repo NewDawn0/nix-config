@@ -45,7 +45,7 @@
     lfs.enable = true;
     signing = {
       key = "0xF407CF2A283453F3";
-      signByDefault = true;
+      signByDefault = false;
     };
   };
 }
