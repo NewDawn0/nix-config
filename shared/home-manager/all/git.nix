@@ -1,4 +1,6 @@
-{ ... }: {
+{ pkgs, ... }: {
+  home.packages = with pkgs;
+    if stdenv.isDarwin then [ pinentry_mac ] else [ pinentry-qt ];
   programs.git = {
     enable = true;
     userName = "NewDawn0";
@@ -45,7 +47,7 @@
     lfs.enable = true;
     signing = {
       key = "0xF407CF2A283453F3";
-      signByDefault = false;
+      signByDefault = true;
     };
   };
 }
