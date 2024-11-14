@@ -17,7 +17,6 @@
       "github"
       "hammerspoon"
       "iina"
-      "jellybeansoup-netflix"
       "languagetool"
       "microsoft-excel"
       "microsoft-outlook"
