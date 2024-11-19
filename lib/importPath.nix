@@ -16,46 +16,38 @@ let
         });
     };
 
-  mkModuleWrapper = with builtins;
-    prefix: path: name:
-    # Check all systems
-    if match ".*all.*" (toString path) != null then
-      [
-        (mkModule prefix path name true)
-      ]
-      # Check darwin
-    else if match ".*darwin.*" (toString path) != null
-    && lib.hasSuffix "darwin" userInfo.system then
-      [
-        (mkModule prefix path name true)
-      ]
-      # Check linux 
-    else if match ".*linux.*" (toString path) != null
-    && lib.hasSuffix "linux" userInfo.system then
-      [ (mkModule prefix path name true) ]
-    else
-      null;
+  mkModuleWrapper = prefix: path: name:
+    let
+      match = builtins.toString path |> builtins.match ".*(all|darwin|linux).*";
+      suffixMatch = suf: lib.hasSuffix suf userInfo.system;
+      mkIfMatch = sysType: match == [sysType];
+      mkIfAllMatch = sysType: mkIfMatch sysType && suffixMatch sysType;
+    in match != null
+        |> (isMatch:
+          if !isMatch then null
+          else if mkIfMatch "all" then [ (mkModule prefix path name true) ]
+          else if mkIfAllMatch "darwin" then [ (mkModule prefix path name true) ]
+          else if mkIfAllMatch "linux" then [ (mkModule prefix path name true) ]
+          else null);
 
   checkDirRec = path: prefix:
-    let
-      checkEntries = lib.mapAttrsToList (name: type:
+    builtins.readDir path
+      |> lib.mapAttrsToList (name: type:
         if type == "directory" then
           checkDirRec "${path}/${name}" "${prefix}${name}-"
         else if type == "regular" && lib.hasSuffix ".nix" name then
           mkModuleWrapper prefix path name
-        else
-          null) (builtins.readDir path);
-      # Flatten list and remove nulls
-      files =
-        builtins.concatLists (builtins.filter (x: x != null) checkEntries);
-    in files;
+        else null)
+      |> builtins.filter (x: x != null)
+      |> builtins.concatLists;
 
   /* ImportPath imports all the subsequent files in a path converts them to modules and enables/disables them
      @param: {path}    dir     -- The directory where files are taken from
   */
-  importPath = path:
-    if lib.hasSuffix "home-manager" (builtins.baseNameOf path) then
-      checkDirRec path "hm-"
-    else
-      checkDirRec path "";
+  importPath = path: path
+    |> builtins.baseNameOf
+    |> (base: if lib.hasSuffix "home-manager" base then
+        checkDirRec path "hm-"
+      else
+        checkDirRec path "");
 in importPath

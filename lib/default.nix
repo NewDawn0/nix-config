@@ -10,14 +10,16 @@ let
   mkArgs = system: hostName: userName:
     let
       overlays = import ./overlays.nix { inherit inputs; };
-      inherit (mkPkgs { inherit system overlays; }) pkgs unstable;
-      userInfo = {
-        inherit hostName system userName;
-        installPath = builtins.baseNameOf ./.;
-        userHome = (if pkgs.stdenv.isDarwin then "/Users/" else "/home/")
-          + userName;
-      };
-    in { inherit overlays pkgs unstable userInfo; };
+    in mkPkgs { inherit system overlays; }
+      |> ({ pkgs, unstable }: {
+        userInfo = {
+          inherit hostName system userName;
+          installPath = builtins.baseNameOf ./.;
+          userHome = (if pkgs.stdenv.isDarwin then "/Users/" else "/home/")
+            + userName;
+        };
+        inherit overlays pkgs unstable;
+      });
 
   mkPkgs = { system, overlays ? [ ] }:
     let config = { allowUnfree = true; };
@@ -28,18 +30,19 @@ let
 
   # Set up each shell in ../shells for each system
   mkShells = eachSystem (system:
-    let inherit (mkPkgs { inherit system; }) pkgs unstable;
-    in shellsForSystem pkgs unstable);
+    mkPkgs { inherit system; }
+      |> ({ pkgs, unstable }: shellsForSystem pkgs unstable));
 
   # Set up each shell in ../shells
   shellsForSystem = pkgs: unstable:
-    let
-      files = with builtins; attrNames (readDir ../shells);
-      shellAttrs = builtins.map (f:
-        lib.attrsets.setAttrByPath [ (lib.removeSuffix ".nix" f) ]
-        (pkgs.callPackage ../shells/${f} { inherit pkgs unstable; })) files;
-    in mergeAttrs shellAttrs;
+    builtins.readDir ../shells
+      |> builtins.attrNames
+      |> lib.mapAttrs' (f: {
+        inherit (lib.removeSuffix ".nix" f);
+        value = pkgs.callPackage ../shells/${f} { inherit pkgs unstable; };
+      })
+      |> mergeAttrs;
 
   eachSystem = nixpkgs.lib.genAttrs (import inputs.nix-systems);
-  mergeAttrs = attrs: builtins.foldl' (acc: next: acc // next) { } attrs;
+  mergeAttrs = attrs: attrs |> builtins.foldl' (acc: next: acc // next) { };
 in { inherit mkArgs mkShells; }

@@ -8,8 +8,9 @@
   # Nix settings
   services.nix-daemon.enable = true;
   nix = {
+    optimise.automatic = true;
     settings = {
-      experimental-features = "nix-command flakes";
+      experimental-features = "nix-command flakes pipe-operators";
       substituters =
         [ "https://nix-community.cachix.org" "https://cache.nixos.org" ];
       trusted-public-keys = [

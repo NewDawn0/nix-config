@@ -4,7 +4,7 @@ NIX_INSTALL_DIR := $(shell pwd)
 
 build: patch
 	@echo "Building the system configuration..."
-	nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .
+	nix run nix-darwin --extra-experimental-features "nix-command flakes pipe-operators" -- switch --flake .
 	make unpatch
 
 clean:
