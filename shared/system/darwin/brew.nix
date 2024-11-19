@@ -8,7 +8,7 @@
   };
   homebrew = {
     enable = true;
-    brews = [ "mas" "mpv" "openssl@3" ];
+    brews = [ "mas" "openssl@3" ];
     casks = [
       "amethyst"
       "appcleaner"
