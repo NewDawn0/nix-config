@@ -37,9 +37,8 @@ let
   shellsForSystem = pkgs: unstable:
     builtins.readDir ../shells
       |> builtins.attrNames
-      |> lib.mapAttrs' (f: {
-        inherit (lib.removeSuffix ".nix" f);
-        value = pkgs.callPackage ../shells/${f} { inherit pkgs unstable; };
+      |> lib.map (f: let val = lib.removeSuffix ".nix" f; in {
+        "${val}" = pkgs.callPackage ../shells/${f} { inherit pkgs unstable; };
       })
       |> mergeAttrs;
 
