@@ -1,4 +1,1 @@
-{ inputs }: [
-  inputs.ndnvim.overlays.default
-  inputs.nix-custom-pkgs.overlays.default
-]
+{ inputs }: [ inputs.ndnvim.overlays.default ]

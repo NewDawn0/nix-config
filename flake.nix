@@ -19,11 +19,6 @@
       inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-custom-pkgs = {
-      url = "github:NewDawn0/nix-custom-pkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-systems.follows = "nix-systems";
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nix-darwin, ... }:
