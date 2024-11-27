@@ -1,4 +1,4 @@
-{ inputs, lib, userInfo, ... }: {
+{ lib, userInfo, ... }: {
   nix-homebrew = {
     enable = true;
     enableRosetta =
@@ -15,7 +15,6 @@
       "balenaetcher"
       "firefox"
       "github"
-      "hammerspoon"
       "iina"
       "languagetool"
       "microsoft-excel"
