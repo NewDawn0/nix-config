@@ -2,6 +2,10 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      terminal.shell = {
+        args = [ "-l" ];
+        program = "${pkgs.zsh}/bin/zsh";
+      };
       cursor = { style.shape = "Beam"; };
       font = {
         builtin_box_drawing = false;
@@ -11,10 +15,6 @@
         };
       };
       scrolling.history = 10000;
-      shell = {
-        args = [ "-l" ];
-        program = "${pkgs.zsh}/bin/zsh";
-      };
       window = {
         decorations = "none";
         dimensions = {
