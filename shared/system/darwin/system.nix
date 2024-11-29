@@ -1,4 +1,4 @@
-{ pkgs, self, userInfo, ... }: {
+{ pkgs, userInfo, ... }: {
   documentation = {
     info.enable = false;
     doc.enable = false;
@@ -14,7 +14,7 @@
         magnification = false;
         orientation = "left";
         persistent-apps = [
-          "${pkgs.alacritty}/Applications/Alacritty.app"
+          "${userInfo.userHome}/Documents/automations/Alacritty.app"
           "/Applications/Firefox.app"
           "${pkgs.obsidian}/Applications/Obsidian.app"
           "/System/Applications/Calendar.app"
