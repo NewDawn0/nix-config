@@ -27,11 +27,11 @@
       devShells = util.mkShells;
       nixosConfigurations = { };
       darwinConfigurations = {
-        NewDawn0-mbpro2020 = nix-darwin.lib.darwinSystem {
-          modules = [ ./hosts/NewDawn0-mbpro2020 ];
+        NewDawn0-Mac = nix-darwin.lib.darwinSystem {
+          modules = [ ./hosts/NewDawn0-Mac ];
           specialArgs = {
             inherit self inputs;
-            inherit (util.mkArgs "x86_64-darwin" "NewDawn0-mbpro2020" "tom")
+            inherit (util.mkArgs "x86_64-darwin" "NewDawn0-Mac" "dawn")
               userInfo pkgs unstable overlays;
           };
         };

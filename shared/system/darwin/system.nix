@@ -15,7 +15,7 @@
         orientation = "left";
         persistent-apps = [
           "${pkgs.alacritty}/Applications/Alacritty.app"
-          "/Applications/Orion.app"
+          "/Applications/Firefox.app"
           "${pkgs.obsidian}/Applications/Obsidian.app"
           "/System/Applications/Calendar.app"
           "/Applications/Microsoft Outlook.app"
