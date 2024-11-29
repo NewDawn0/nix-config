@@ -5,7 +5,6 @@
     gimp
     jetbrains.idea-community
     mpv
-    postman
     # prismlauncher
   ];
 }
