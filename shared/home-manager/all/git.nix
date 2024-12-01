@@ -15,6 +15,7 @@
       pu = "push";
       root = "rev-parse --show-toplevel";
       st = "status";
+      re = "restore";
     };
     ignores = [
       # General
